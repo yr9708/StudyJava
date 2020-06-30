@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>Jsp05_HelloServlet</display-name>
+  <welcome-file-list>
+    <welcome-file>home.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param> <!-- 해당 프로젝트,해당 context 전체에서 사용할 수 있음 -->
+  	<param-name>url</param-name>
+  	<param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  
+  <servlet> 
+  	<servlet-name>hello</servlet-name>
+  	<servlet-class>com.hello.controller.HelloServlet</servlet-class>
+  	<init-param> <!-- 해당 servlet안에서만 사용가능 -->
+  		<param-name>driver</param-name>
+  		<param-value>oracle.jdbc.driver.OracleDriver</param-value> <!-- 지금..값은 아무의미가 없다..adc 써놔도됨 -->
+  	</init-param>
+  	<load-on-startup>1</load-on-startup> <!-- 해당 servlet을 언제 실행할거냐 1이면 첫번째로 실행하라는 말 -->
+  </servlet>
+  
+  <servlet-mapping> 
+  	<servlet-name>hello</servlet-name>
+  	<url-pattern>/hellocontroller.do</url-pattern> 
+  </servlet-mapping>
+  
+
+  
+</web-app>

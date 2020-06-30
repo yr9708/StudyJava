@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Hello Servlet</h1>
+	<a href="HelloServlet?command=hello">hello</a>
+	
+	<form action="hellocontroller.do" method="post">
+		<input type="hidden" name="command" value="servlet">
+		<input type="submit" value="hello(post)">
+	</form>
+	
+	<form action="hellocontroller.do" method="get">
+		<input type="hidden" name="command" value="servlet">
+		<input type="submit" value="hello(get)">
+	</form>
+
+</body>
+</html>
