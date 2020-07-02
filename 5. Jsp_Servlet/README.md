@@ -32,4 +32,6 @@
 
   > pageContext, request, session, application의 객체이동에 대한 차이점 알기
 
-수정
+* Jsp07_EL_JSTL
+
+  > JSP 내부적인 언어로서 사용방법 알기
