@@ -35,3 +35,7 @@
 * Jsp07_EL_JSTL
 
   > JSP 내부적인 언어로서 사용방법 알기
+
+* Jsp08_MVC02
+
+  >usebean을 이용해서 게시판 만들기
