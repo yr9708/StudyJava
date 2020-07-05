@@ -58,8 +58,10 @@ public class MVCServlet extends HttpServlet {
 			int res = biz.insert(dto);
 		//	response.sendRedirect("controller.do?command=list");
 			if(res > 0) {
-				out.print("<script>alert('작성되었습니다'); location.href='controller.do?command=list';</script>");
-				out.flush();
+				jsResponse("작성되었습니다.", "controller.do?command=list", response);
+			}else {
+				jsResponse("작성실패","controller.do?command=insert", response);
+				
 			}
 		}if(command.equals("update")) {
 			int seq = Integer.parseInt(request.getParameter("seq"));
