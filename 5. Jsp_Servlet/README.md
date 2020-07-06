@@ -39,3 +39,7 @@
 * Jsp08_MVC02
 
   >usebean을 이용해서 게시판 만들기
+
+* Jsp09_AnswerBoard
+
+  >MVC2 패턴과 JSTL을 이용해서 답변글 사용 가능하게 게시판 만들기
