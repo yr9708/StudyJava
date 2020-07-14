@@ -2,7 +2,11 @@
 
 - Jsp01_Myboard 
 
-  > MVC1 패턴을 이용해 게시판 만들기 (jsp->jsp)
+  > MVC1 패턴을 이용해 게시판 만들기 (jsp->jsp) 
+
+- Jsp01_Myboard_Mybatis
+
+  > mybatis를 이용하여 게시판 만들기
 
 - Jsp02_MultiDelete 
 
@@ -11,6 +15,10 @@
 - Jsp02_MultiDelete_Servlet
 
   >MVC2 패턴을 이용해 게시판 만들기 + Controller가 Servlet이다.
+
+- Jsp02_MultiDelete_Mybatis
+
+  > MVC2패턴 이용 + Mybatis
 
 - Jsp03_MVC01
 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myboard"> <!-- 이름설정은 내 마음대로 -->
+	
+	 <resultMap type="myDto" id="myDtoResultMap">
+	 	<result property="myno" column="MYNO"/>
+	 	<result property="myname" column="MYNAME"/>
+	 	<result property="mytitle" column="MYTITLE"/>
+	 	<result property="mycontent" column="MYCONTENT"/>
+	 	<result property="mydate" column="MYDATE"/>
+	 </resultMap>
+	
+	
+	  <select id="selectList" resultMap="myDtoResultMap">
+	  	SELECT MYNO, MYNAME, MYTITLE, MYCONTENT, MYDATE
+	  	FROM MYBOARD
+	  </select> <!-- 내부적으로 PreparedStatement가 돌기 때문에 ; 안붙여줘도 된다. -->
+	  
+	  <select id="selectOne" parameterType="int" resultType="myDto">
+	  	SELECT MYNO, MYNAME, MYTITLE, MYCONTENT, MYDATE
+	  	FROM MYBOARD
+	  	WHERE MYNO = #{myno}
+	  </select>
+	  
+	  <insert id="insertDto" parameterType="myDto" >
+	  	INSERT INTO MYBOARD
+	  	VALUES ( MYNOSEQ.NEXTVAL, #{myname}, #{mytitle}, #{mycontent}, SYSDATE ) 
+	  </insert>
+	  
+	  <update id="updateDto" parameterType="myDto">
+	  	UPDATE MYBOARD 
+	  	SET MYTITLE=#{mytitle}, MYCONTENT=#{mycontent} 
+	  	WHERE MYNO=#{myno} 
+	  </update>
+	  
+	  <delete id="delete" parameterType="int">
+	  	DELETE FROM MYBOARD
+	  	WHERE MYNO = #{myno}
+	  </delete>
+  
+  
+  
+  
+</mapper>
