@@ -1,7 +1,9 @@
 package com.muldel.dao;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -16,7 +18,8 @@ public class MDBoardDao extends SqlMapConfig{
 		List<MDBoardDto> list = null;
 		
 		try {
-			session = getSqlSessionFactory().openSession(true);
+			// auto commit 할거야 안할거야?, 기본값은 true
+			session = getSqlSessionFactory().openSession(false);
 			list = session.selectList(namespace+"selectList");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -32,7 +35,7 @@ public class MDBoardDao extends SqlMapConfig{
 		MDBoardDto dto = null;
 		
 		try {
-			session = getSqlSessionFactory().openSession(true);
+			session = getSqlSessionFactory().openSession(false);
 			dto = session.selectOne(namespace+"selectOne",seq);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -48,8 +51,11 @@ public class MDBoardDao extends SqlMapConfig{
 		int res = 0;
 		
 		try {
-			session = getSqlSessionFactory().openSession(true);
+			session = getSqlSessionFactory().openSession(false);
 			res = session.insert(namespace+"insert",dto);
+			if(res > 0) {
+				session.commit();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -64,8 +70,11 @@ public class MDBoardDao extends SqlMapConfig{
 		int res = 0;
 		
 		try {
-			session = getSqlSessionFactory().openSession(true);
+			session = getSqlSessionFactory().openSession(false);
 			res = session.update(namespace+"update",dto);
+			if(res > 0) {
+				session.commit();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -80,8 +89,11 @@ public class MDBoardDao extends SqlMapConfig{
 		int res = 0;
 		
 		try {
-			session = getSqlSessionFactory().openSession(true);
+			session = getSqlSessionFactory().openSession(false);
 			res = session.delete(namespace+"delete",seq);
+			if(res > 0) {
+				session.commit();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -93,7 +105,21 @@ public class MDBoardDao extends SqlMapConfig{
 	}
 
 	public int multiDelete(String[] seq) { 
-		
-		return 0; // (seq.length == res)? 1:0; 모두 다 삭제되었을때만 1이나오고 아니면 0이 나옴
+		int count = 0;
+		Map<String, String[]> map = new HashMap<>();
+		map.put("seqs",seq);
+		SqlSession session = null;
+		try {
+			session = getSqlSessionFactory().openSession(false);
+			count =session.delete(namespace+"muldel",map);
+			if(count==seq.length) {
+				session.commit();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return count; 
 	}
 }
