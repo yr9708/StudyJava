@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js06</title>
+
+<script type="text/javascript">
+	function myQClass(){
+		this.name = "kh정보교육원";			// 외부에서 접근 가능
+		var name2 = "빅데이터 전문가 과정"; // 외부에서 접근 불가
+		this.getName2 = function(){
+			return name2;
+		}
+	}
+	
+	var yourQClass = { // body만 있는것 -> 객체 리터럴, 리터럴 객체 라고 한다. {key : value, key : value}
+			name : "kh정보교육원",
+			print: function(){
+				return yourQClass.name + " 빅데이터 전문가 과정!";
+			}
+	}
+	
+	// prototype : 기능을 확장시켜주는 것. myQClass에 pritnSubject 라는 변수를 추가하고 그 함수를 이렇게 주겠다.
+	myQClass.prototype.printSubjects = function(){
+		alert(this.name + " " + this.getName2() + " : java, db, ui");
+	}
+	
+	function objTest(){
+		var cls = new myQClass();
+/* 		alert(cls.name);
+		alert(cls.name2); // undefined : 정의되지 않았다. (변수 없음), null : 값이 없다 (변수 있음)
+		alert(cls.getName2()); */
+		
+/* 		alert(yourQClass.name);
+		alert(yourQClass.print()); */
+		
+		cls.printSubjects();
+	}
+
+</script>
+</head>
+<body>
+<!-- pre 는 그대로 출력해주는 태그 -->
+	<pre> 객체의 구성
+		-메서드 : 기능 정의
+		-속성 : 객체 내부 데이터
+		-this : 객체 내부의 메서드나 속성을 정의할 때 사용
+		-프로토타입 : 객체의 확장
+	</pre>
+	
+	<button onclick="objTest();">클릭!</button>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq10</title>
+<script type="text/javascript" src="resources/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+/*
+	이벤트 전파 : 각 요소가 서로 포함관계(중첩)인 경우
+				  요소 중 하나에 이벤트가 발생하면
+				  중첩된 요소들도 이벤트가 전파된다.
+				  
+	이벤트 전파 막는 방법 
+			- stopPropagation() : 이벤트 요소의 전파 막기
+			- preventDefault() : 이벤트에 의한 기본 동작 막기
+			- return false : 위의 기능 두개 모두 적용
+*/
+	$(function(){ // 문서가 다 로딩된 이후에 적용, 문서에 존재했을때만 적용이 됨
+		$("a:eq(0)").click(function(e){ // 클릭이벤트도 막고 a href 도 막겠다
+			alert("a 클릭!"); 
+			return false;
+		});
+		
+		$("p").click(function(e){
+			alert("p 클릭!"); 
+		//	e.stopPropagation(); click이벤트를 전파하는 것을 막겠다
+			e.preventDefault(); 
+		});
+		
+		$("div").click(function(){
+			alert("div 클릭!");
+		});
+		
+	/* 다시 이해해야할듯
+		$("a:eq(1)").bind("mouseover mouseout",function(e){
+			if(e.type == "mouseover"){
+				$(this).css("background-color","hotpink");
+			}
+			if(e.type == "mouseout"){
+				$(this).css("background-color","");
+			}
+		});
+	*/
+		
+		$("a:eq(1)").bind({
+			"mouseover":function(){
+				$(this).css("background-color","skyblue");
+			},
+			"mouseout":function(){
+				$(this).css("background-color","");
+			}
+		});
+		 
+		$("span").click(function(){
+			alert("span click!");
+			$("a:eq(1)").unbind();
+		});
+		
+		$("button").click(function(){
+			$("body").append("<p>새로 추가된 p태그</p>");
+		});
+		
+		// bind보다 on을 쓰는것을 추천
+		$("body").on("click"," > p",function(){ // 새로 만들어진 애들한테도 적용이 됨
+			alert("새로 추가된 태그에도 이벤트 적용");
+		});
+		
+		 
+	});
+</script>
+<style type="text/css">
+
+	div{
+		width:400px;
+		height:200px;
+		border:2px solid blue;
+		padding:20px;
+		overflow:auto;
+	}
+	
+	div p:first-child{
+		float: left;
+		border: 1px solid red;
+		width: 150px;
+		height: 150px;
+		text-align: center;
+		line-height:150px;
+	}
+	
+	div p:last-child{
+		float: right;
+		border: 1px solid red;
+		width: 150px;
+		height: 150px;
+		text-align: center;
+		line-height:150px;
+	}
+	
+</style>
+</head>
+<body>
+	<span>unbind() : 이벤트 해제</span>
+	<div>
+		<p>
+			<a href="http://www.naver.com">클릭</a>
+		</p>
+		<p>클릭!</p>
+	</div>
+	
+	<div>
+		<p>
+			<a href="http://www.google.com">클릭</a>
+		</p>
+		<p>클릭!</p>
+	</div>
+	<button>요소 추가</button>
+</body>
+</html>

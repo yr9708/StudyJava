@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js21</title>
+<style type="text/css">
+	p{
+		border:1px solid red;
+	}
+</style>
+<script type="text/javascript">
+	var i = 1;
+	
+	function addAppend(){
+		var p = document.createElement("p");
+		p.textContent = "자식태그들 중 가장 마지막에 붙여 넣는다"+(i++);
+		// var txt = document.createTextNode("자식~넣는다");
+		// p.appendChild(txt);
+		
+		var fieldset = document.getElementById("addElem");
+		fieldset.appendChild(p);
+	}
+	
+	
+	function addBefore(){
+		var p = document.createElement("p");
+		p.textContent = "엘리먼트의 앞에 붙여 넣는다."+(i++);
+		
+		var fieldset = document.getElementById("addElem");
+		var div = document.querySelector("fieldset > div");
+		fieldset.insertBefore(p,div);
+	}
+	
+	function moveElement(){
+		var moveElem = document.querySelector("fieldset").children[1];
+		var addElem = document.body;
+		addElem.appendChild(moveElem);
+		/*
+		검사하지 않는 숙제!
+		childNodes와 children의 차이점?
+				
+		childNodes -> text도 같이 찾는다.
+		children -> 태그만 찾는다.
+				
+				
+		*/
+	}
+	
+	function test01Go(){
+		var div = document.createElement("div");
+		div.textContent = "둥이";
+		
+		var test01 = document.getElementById("test01");
+		test01.appendChild(div);
+	}
+	
+	function test02Go(){
+		var dongE = document.getElementById("test01").children[0];
+		var test02 = document.getElementById("test02");
+		test02.appendChild(dongE);
+	}
+
+</script>
+</head>
+<body>
+	<h1>태그 추가하기</h1>
+	<button onclick="addAppend()">appendChild()</button>
+	<button onclick="addBefore()">insertBefore()</button>
+	<button onclick="moveElement()">엘리먼트 이동</button>
+	
+	<fieldset id="addElem">
+		<legend>부모태그</legend>
+		<div>div태그</div>
+	</fieldset>
+	
+	<!-- 문제 -->
+	
+	<h3>
+		문제 1. test01 태그에 "dom test"라는 내용을 가진 div 태그를 여러개 추가해보자.
+		<button onclick="test01Go()">클릭!</button>
+	</h3>
+	<h3>
+		문제 2. test01 태그에 추가된 태그들을 test02 태그로 이동시켜보자.
+		<button onclick="test02Go()">클릭!</button>
+	</h3>
+	
+	*test01
+	<div id="test01"></div>
+	*test02
+	<div id="test02"></div>
+	
+	<style>
+		#test01, #test02{
+		width: 300px;
+		height: 300px;
+		border: 1px solid blue;
+		}
+		
+	</style>
+	
+</body>
+</html>

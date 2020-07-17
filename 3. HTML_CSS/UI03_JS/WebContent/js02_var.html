@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js02</title>
+<script type="text/javascript">
+	//javascript 변수의 호이스팅 -> 더 공부하실 분?
+
+	//전역변수
+	var variable01 = 10;
+	
+	function test01(){
+		variable01 = variable01 + 5;
+		document.getElementById("v01").innerHTML = "<b style='color:white; background:indianred;'>" + variable01 + "</b>";
+		
+	}
+	
+	function test02(){
+		var variable02 = variable01 + 100;
+		document.getElementById("v02").innerHTML = '<b style="color:white; background:indianred;">' + variable02 + "</b>";
+	}
+	
+	function test03(){
+		// 문자열 String
+		var variable03 = "문자";
+		alert(variable03 +"의 타입 : "+ typeof(variable03));
+		
+		// 숫자 number
+		variable03 = 5;
+		alert(variable03 +"의 타입 : "+ typeof(variable03));
+		
+		// 논리
+		variable03 = true;
+		alert(variable03 +"의 타입 : "+ typeof(variable03));
+		
+		// null
+		variable03 = null;
+		alert(variable03 +"의 타입 : "+ typeof(variable03));
+		
+		// array(object)
+		variable03 = [1,3,5,7,9];
+		alert(variable03 +"의 타입 : "+ typeof(variable03));
+		
+		// function
+		variable03 = function(){
+			console.log("타입 변환");
+			alert("함수도 값이다!! 매우중요")
+		}
+		alert(variable03 +"의 타입 : "+ typeof(variable03));
+		
+	}
+	
+
+</script>
+</head>
+<body>
+	<h1>변수</h1>
+	<dl>
+		<dt>변수 선언 규칙</dt>
+		<dd>1.대소문자 구분</dd>
+		<dd>2.영문, $, _로 시작</dd>
+		<dd>3.영문, $, _, 숫자를 포함할 수 있다.</dd>
+		<dd>4.키워드나 예약어를 사용할 수 없다.</dd>
+		
+		<dt>변수 범위</dt>
+		<dd>1.전역변수 : window객체에 포함되는 변수. 다른 함수들에서 공용으로 사용할 수 있다. (값이 유지됨)
+			<button onclick="test01();">확인</button>
+		</dd>
+		<dd id="v01"></dd>
+		<dd>2.지역변수 : 함수나 객체 내부에 선언되고 실행이 종료되면 사라진다.
+			<button onclick="test02()";> 확인</button>
+		</dd>
+		<dd id="v02"></dd>
+		
+		<dt>변수 선언 및 저장</dt>
+		<dd>1.var키워드를 사용하여 변수 선언</dd>
+		<dd>2.변수의 타입은 저장되는 타입에 따라 결정된다.
+			<button onclick="test03();">확인</button>
+		</dd>
+		
+		<dt>타입의 종류</dt>
+		<dd>1.문자(String)</dd>
+		<dd>2.숫자(number)</dd>
+		<dd>3.논리(boolean)</dd>
+		<dd>4.null</dd>
+		<dd>5.객체(Object)</dd>
+		<dd>6.함수(function)</dd>
+		
+		
+		
+		
+		
+	</dl>
+</body>
+</html>

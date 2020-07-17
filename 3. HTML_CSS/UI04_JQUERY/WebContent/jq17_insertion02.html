@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq17</title>
+<style type="text/css">
+	img{
+		width:150px;
+		height:150px;
+		float:left;
+	}
+	#menu, .practice, .pt2{
+		overflow:auto;
+	}
+	#menubox{position:relative;}
+	.sel{
+		width:140px;
+		height:140px;
+		border:5px dotted red;
+		position:absolute;
+		left:300px;	
+	}
+	button{
+		width:150px;
+		height:50px;
+		margin-left:300px;
+	}
+	
+	.cc{
+		display:none;
+	}
+</style>
+<script type="text/javascript" src="resources/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// 설정한 시간 간격으로 반복 처리를 실행한다.
+		setInterval(function(){
+			var div = $("#menu");
+		// $(".active").first().appendTo(div); // 앞에 내용을 div에 추가
+		// $(div).append($(".active").first());
+        // $(".active:eq(0)").appendTo(div);
+        // $(".active").last().prependTo(div);
+			$(div).append($(".active:eq(0)"));
+			
+			$(".practice").append($(".hh").first());
+		
+			
+		},1000); // 1000 = 1초
+		
+		$("button").click(function(){
+			$("img").toggleClass("active");
+			
+			if($("button").text() == "start"){
+				$("button").text("stop");
+			} else {
+				$("button").text("start");
+				alert("선택하신 이미지는 " + $("img:eq(2)").attr("alt") + "입니다");
+			}
+		});
+		
+		
+		setInterval(function(){
+			var cnt = 1;
+			var length = $(".cc").length;
+			$(".cc").prop("alt",("img0"+cnt)).fadeOut();
+			
+			if(cnt == length){
+				cnt = 1;
+			}else{
+				cnt++;
+			}
+			
+			$(".cc").prop("alt",cnt++).fadeIn();
+			
+			
+			
+		},2000);
+		
+	});
+
+</script>
+</head>
+<body>
+	<h1>사진을 선택해 주세요</h1>
+	<div id="menubox">
+	<div class="sel"></div>
+	<div id="menu">
+		<img alt="img01" src="resources/img/img01.png" >
+		<img alt="img02" src="resources/img/img02.png" >
+		<img alt="img03" src="resources/img/img03.png">
+		<img alt="img04" src="resources/img/img04.png">
+		<img alt="img05" src="resources/img/img05.png">
+	</div>
+	<button>start</button>
+	</div>
+	
+	<br>
+	<div class="practice">
+		<img alt="img01" src="resources/img/img01.png" class="hh">
+		<img alt="img02" src="resources/img/img02.png" class="hh">
+		<img alt="img03" src="resources/img/img03.png" class="hh">
+		<img alt="img04" src="resources/img/img04.png" class="hh">
+		<img alt="img05" src="resources/img/img05.png" class="hh">
+	</div>
+	
+	<br>
+	<div>
+		<div class="pt2">
+			<img alt="img01" src="resources/img/img01.png" class="cc">
+			<img alt="img02" src="resources/img/img02.png" class="cc">
+			<img alt="img03" src="resources/img/img03.png" class="cc">
+			<img alt="img04" src="resources/img/img04.png" class="cc">
+			<img alt="img05" src="resources/img/img05.png" class="cc">
+		</div>	
+	</div>
+</body>
+</html>

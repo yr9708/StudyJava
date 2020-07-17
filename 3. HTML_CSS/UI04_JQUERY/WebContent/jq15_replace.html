@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq15</title>
+<script type="text/javascript" src="resources/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+	/*
+					
+	*/
+	// target.replaceWith(new) -> new : 객체,배열,function 다 가능
+		$("button:first").click(function(){
+			$("p").replaceWith("<p><b>replaceWith</b></p>");
+		});
+		
+	//	new.replaceAll(target) -> target : function빼고 가능
+		$("button:last").click(function(){
+			$("<p><b>replaceAll</b></p>").replaceAll("p");
+		});
+	});
+</script>
+</head>
+<body>
+	<Div>
+		<p>DOM 대체</p>
+	</Div>	
+	<button>바꾸기(replaceWith)</button>
+	<button>바꾸기(replaceAll)</button>
+</body>
+</html>

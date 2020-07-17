@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js05</title>
+
+<style type="text/css">
+	.select{
+		cursor : pointer;
+	}
+</style>
+
+<script type="text/javascript">
+
+	function searchId(){
+		var doc = document.getElementById("test");
+		// html 파일 자체가 document 자체이다, 반환되는 값이 하나이기 때문에 getElement , 값이 여러개면 getElements
+		// 속성은 id, class 등등
+		// 요소는 태그 ex) <p></p> <div></div> 등등
+		alert(doc + " : "+typeof(doc));
+		console.log(doc);
+		doc.innerHTML = "id로 탐색 완료";
+		doc.style.color="red";
+	}
+
+	function searchName(){
+		var doc = document.getElementsByName("test02"); // nodeList
+		doc[1].value="name으로 탐색 완료!";
+		alert(doc + " : "+typeof(doc));
+	}
+	
+	function searchTagName(){
+		var doc = document.getElementsByTagName("p");
+		doc[3].innerHTML = "tagName으로 탐색"; //4번째의 글자를 "tagName으로 탐색"
+		doc[3].style.color = "pink";
+	}
+	
+	function searchQS(){
+		var doc = document.querySelectorAll("#test");
+		// nodeList로 id가 test인 것을 가져올거야. ex).select -> select인 class를 가져올거야
+		doc[0].innerHTML = "css 선택자로 탐색!";
+	}
+	
+/*
+ document 
+ 
+ */
+</script>
+</head>
+<body>
+<!-- html 문서(document) 요소 -> javascript object(객체) =>사용 Node/NodeList
+	ex) documnet.getElementsByTagName("p") 		//nodeList (array)
+		document.getElementsByName("");			//nodeList
+		document.getElementById("test");		//node
+ -->
+	<p class="select" onclick="searchQS()">DOM 탐색 메서드</p>
+	<p id="test" class="select" onclick="searchId()">1. 엘리먼트의 id로 탐색 : 엘리먼트 하나를 선택 (중복 불가) - 값 하나 반환</p>
+	<p onclick="searchName();">2. 엘리먼트의 name으로 탐색 : 엘리먼트 여러개 선택 - 값 여러개 (배열) 반환 (name중복 가능)<br/>
+	<input type="text" name="test02"><br/>
+	<input type="text" name="test02"><br/>
+	<input type="text" name="test02"><br/>
+	</p>
+	<p class="select" onclick="searchTagName()">3. 엘리먼트의 태그 이름으로 탐색 : 엘리먼트 여러개 선택 - 값이 여러개 (배열) 반환</p>
+	
+	
+</body>
+</html>

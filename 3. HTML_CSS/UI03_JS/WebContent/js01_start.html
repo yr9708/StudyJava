@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js01</title>
+<style type="text/css">
+	li{
+		cursor:pointer;
+	}
+</style>
+<script type="text/javascript" src="resources/js/basic.js"></script>
+<script type="text/javascript">
+	
+	function embededTest(){
+		var doc = document.getElementsByTagName("li")[1];
+		doc.style.color="red";
+		doc.innerHTML="<strong>글자가 바뀌었습니다!!!!</strong>";
+	}
+
+</script>
+
+</head>
+<body>
+	<!-- 
+		on 이라고 붙이면 이벤트가 발생할것이다 (자바스크립트겠구나) 
+		; 세미콜론 사용해도 되고 안해도 된다. 
+		꼭 사용해야 하는 경우는 따로 있다.
+	 -->
+	<h1>자바스크립트 작성방식 3가지</h1>
+	<ol>
+		<li onclick="alert('inline방식으로 실행됨!');">inline 방식</li> 
+		<li onclick="embededTest();">내부 작성 방식</li>
+		<li onclick="test();">외부 작성 방식(*.js)</li>
+	</ol>
+	
+</body>
+</html>

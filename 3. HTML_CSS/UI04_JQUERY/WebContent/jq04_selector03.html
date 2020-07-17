@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq04</title>
+<script type="text/javascript" src="resources/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	function c1(){
+		var doc = $("input:text").val(); //input의 type이text인 것의 value
+		console.log(doc);
+	}
+	
+	function c2(){
+		var doc = $("input:radio").val();
+		alert(doc);
+	}
+	
+	function c3(){
+		var doc = $("input:checkbox").val();
+		$("#a").html("<b>"+doc+"</b>");
+		$("#a").text("<b>"+doc+"</b>");
+	}
+	
+	// window.onload 와 같은 말
+	$(function(){ // jquery를 아무런 action이 없어도 써주기 위해서 function사용 
+		$("input").css("background-color","yellow");
+		var selElem = document.getElementsByTagName("select")[0];
+		selElem.onchange = function(){
+			alert(selElem.options[selElem.selectedIndex].value);
+			console.log(selElem.selectedIndex);
+		}
+	});
+
+	
+</script>
+</head>
+<body>
+	<form action="">
+		<input type="text">
+		<input type="button" value="선택" onclick="c1();">
+		<input type="radio" value="20-04-14" onclick="c2();">20-04-14~
+		<input type="checkbox" value="(빅데이터 전문 개발자 과정)" onclick="c3()">빅데이터 전문가
+		<div id="a"></div>
+		<select>
+			<option value="1">one</option>
+			<option value="2">two</option>
+			<option value="3">three</option>
+		</select>		
+	</form>
+</body>
+</html>

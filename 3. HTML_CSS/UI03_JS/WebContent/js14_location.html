@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js14</title>
+<script type="text/javascript">
+	function locTest(){
+		location.reload(); 							// 새로고침
+		location.href="http://www.naver.com";		// 페이지 이동
+		location.assign("http://www.google.com");	// 페이지 이동 (href 와 같다)
+		location.replace("http://www.daum.net");	// 페이지 이동 (전 단계 이력 x ) -> daum에서 뒤로가기 하면 js14_location이 아니라 index가 나옴
+	}
+
+</script>
+</head>
+<body>
+	<a href="https://www.google.com/search?q=kh%EC%A0%95%EB%B3%B4%EA%B5%90%EC%9C%A1%EC%9B%90&oq=kh&aqs=chrome.1.69i57j0l7.1485j0j8&sourceid=chrome&ie=UTF-8">페이지 이동</a>
+	
+	<button onclick="locTest()">이동</button>
+</body>
+</html>

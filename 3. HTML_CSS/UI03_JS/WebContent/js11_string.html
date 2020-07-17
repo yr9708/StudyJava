@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js11</title>
+</head>
+<body>	
+	<p>
+		문자열 합치기 <button onclick="strTest01();">클릭</button>
+	</p>
+	<script type="text/javascript">
+	
+		function strTest01(){
+			var str01 = "String";
+			var str02 = "Test";
+			
+			// + 연산자
+			var str03 = str01 + str02;
+			alert("String + Test = "+str03);
+			
+			// concat()
+			var str04 = str01.concat(str02, " : ","Javascript ","String obejct");
+			alert(str04);
+		}
+	
+	</script>
+	
+	
+	
+	<p>
+		다른 자료형 합치기 <button onclick="strTest02()">클릭</button>
+	</p>
+	
+	<script type="text/javascript">
+		function strTest02(){
+			var num = 12.5;
+			var bool = true;
+			var result = "String 1 "+ num + bool;
+			alert(result + " : "+typeof(result));
+		}
+	</script>
+	
+	<p>
+		문자열 비교하기
+		<button onclick="strTest03()">클릭</button>
+		<span id="res"></span>
+	</p>
+	
+	<script type="text/javascript">
+		
+		function strTest03(){
+			var str = prompt("이름을 입력하세요 : ");
+			var span = document.getElementById("res");
+			
+			// 동등 연산자 ==
+			if(str == "kh"){
+				span.textContent = str + "님 환영합니다.";
+			}else if(str.toLowerCase() == "qclass"){
+				span.textContent = str + "님 환영합니다.";
+			}else{
+				span.textContent = "이름을 다시 확인해주세요.";
+			}
+			
+			// == : 자동형 변환
+			var num = 10;
+			if (num == "10"){ // 같은 타입으로 바꿔서 비교
+				alert("num == 10 true");
+			}else{
+				alert("num == 10 false");
+			}
+			
+			// === : 엄격한 비교
+			// 같지 않다 !==
+			if (num === "10"){ 
+				alert("num === 10 : true");
+			}else{
+				alert("num === 10 : false");
+			}
+			
+			// 객체
+			var strObj = new String("kh");
+			var strVal = "kh";
+			if(strObj == strVal){
+				alert("같다");
+			}else{
+				alert("다르다");
+			}
+			
+			if(strObj === strVal){
+				alert("레알같다");
+			}else{
+				alert("레알 다르다");
+			}
+			console.log(strObj+" : "+typeof(strObj));
+			console.log(strVal + " : "+typeof(strVal));
+			
+			
+		}
+		
+	</script>
+	
+	<p>
+		문자열 검색하기 <button onclick="strTest04()">클릭</button>
+	</p>
+	
+	<script type="text/javascript">
+		function strTest04(){
+			var str = "홍길동 이순신 유재석 강호동 홍길동 최유정 황인규 박진우";
+			var prop = prompt("검색할 이름을 입력해 주세요 : ");
+			// indextOf() : 왼쪽 -> 오른쪽
+			alert("indexOf : "+str.indexOf(prop));
+			// lastIndexOf() : 오른쪽 -> 왼쪽
+			alert("lastindexOf : "+str.lastIndexOf(prop));
+			// 만일 검색하는 값이 없으면 -1 리턴
+		}
+	</script>
+	
+	<p>
+		문자열 추출하기 <button onclick="strTest05();">클릭</button>
+	</p>
+	
+	<script type="text/javascript">
+		function strTest05(){
+			var strVal = "문자열 추출하기. 관련 메소드:indexOf, substring.";
+			// substring()
+			var startIdx = strVal.indexOf(":");
+			var endIdx = strVal.lastIndexOf(".");
+			var result = strVal.substring(startIdx + 1, endIdx);
+			alert(result);
+			
+			// split()
+			var splitVal = result.split(",");
+			alert(splitVal[0]);
+			alert(splitVal[1]);
+			
+		}
+	
+	</script>
+	
+	<p>
+		키워드 나누기 <button onclick="strTest06()">클릭</button>
+	</p>
+		<div id="key"></div>
+		
+	<script type="text/javascript">
+		function strTest06(){
+			var prop = prompt("쉼표로 구분하여 키워드를 입력하세요 : ","예)사과,바나나,키위,수박");
+			
+			var propArr = prop.split(",");
+			var propRes = "";
+			
+			for(var i = 0; i<propArr.length; i++){
+				propRes += "키워드 : "+propArr[i]+"<br/>";
+			}
+			document.getElementById("key").innerHTML = propRes;
+		}
+	
+	</script>
+	
+	
+</body>
+</html>

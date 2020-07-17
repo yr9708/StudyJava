@@ -1,0 +1,104 @@
+/* 타입 선택자 */
+pre{
+	text-align : center;
+}
+h1{
+	text-align : right;
+	color : blue;
+}
+
+/* id 선택자 */
+#sid01{
+	color : #DDA0DD;
+}
+#sid02{
+	color : yellowgreen;
+}
+#sid03{
+	color : hotpink;
+}
+
+/*class 선택자*/
+.scls{
+	background-color:#FFE4E1;
+}
+
+
+/*전체 선택자 (우선순위가 낮다)*/
+*{
+/*	text-align:right; */
+}
+
+/* 자식 선택자 */
+#at > p{ /* at 바로 밑에 있는 p태그 */
+	color: gold;
+}
+
+#at > div > p{ /* id 없이 써도 가능 하다. div > p div 밑에 있는 p태그 */
+	color:silver;	
+}
+
+/*하위 선택자 
+: div 밑에 있는 모든 span 태그들 */
+div span{
+	background-color:lime;
+}
+
+/* 인접 선택자 */
+h3 + b{ /* h3 태그 다음에 나오는 b */
+	color : navy;
+}
+
+b + span{
+	background-color:black;
+	color:white;
+}
+
+/* 속성 선택자 */
+p[title]{ /* p 태그인데 title라는 속성이 존재하는 태그들 */
+	color : orange;
+}
+
+p[title="b"]{
+	background-color:gray;
+}
+
+/* 가상 클래스 선택자 */
+a:link{ /* :link 안간 링크 */
+	color:green;
+	font-size:25pt;	
+}
+
+a:visited{
+	color:red;
+	font-size:15pt;
+}
+
+a:hover{ /* 마우스가 위에 올라가면 나올 행동 */
+	background-color:#FFFFE0;
+	font-family:fantasy;
+	font-size:35pt;
+	color:#20B2AA;
+}
+
+input:checked{ /* 체크박스에 체크가 되면 나올 행동 */
+	width:100px;
+	height:100px;
+}
+
+/* 종속 선택자 */
+li.scls01{
+	background-color:green;
+}
+
+li.scls02#sidul{
+	font-size:20px;
+}
+
+/* 그룹 선택자 */
+p,pre,strong{
+	color:#AFEEEE;
+}
+
+
+

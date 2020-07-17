@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js19</title>
+<style type="text/css">
+	img, #imgView{
+		width:300px;
+		height: 300px;
+	}
+
+</style>
+<script type="text/javascript">
+/*
+ 	1. name이 rdoBtn인 요소들을 가져온다.
+ 	2. 가져온 요소들의 length만큼 for문을 돌면서
+ 		라디오 버튼이 체크되어있는지 확인하고,
+ 		만일 체크되었다면 자신의 value값을 참조하여
+ 		resources/img/...을 가지고 와서 
+ 	3. img 태그를 생성하고 src 속성을 생성해서 
+ 		2번에서 만든 경로를 주입해서 
+ 	4. 화면에 출력되도록 하자.
+ */
+	function createImg(){
+		var rdoBtns = document.getElementsByName("rdoBtn");
+		var path = "resources/img/";
+		//var src = "";
+		for(var i=0; i<rdoBtns.length; i++){
+			if(rdoBtns[i].checked==true){	
+				path += rdoBtns[i].value;
+			//	src = "resources/img/"+rdoBtns[i].value;
+			}
+		}
+		console.log(path);
+		
+		var img = document.createElement("img");
+		img.setAttribute("src",path);
+		// <img src ="resources/img/img01.png"/>
+		
+		var div = document.getElementById("imgView");
+		var chd = document.querySelector("#imgView > img");
+		div.replaceChild(img,chd);
+	}
+	
+	function deleteImg(){
+		
+		document.getElementById("imgView").innerHTML = "<img src=''>";
+		
+		
+/* 		var img = document.createElement("img");
+		img.setAttribute("src","");
+		
+		var div = document.getElementById("imgView");
+		var chd = document.querySelector("#imgView > img");
+		div.replaceChild(img,chd); */
+	}
+	
+</script>
+</head>
+<body>
+	<input type="radio" name="rdoBtn" value="img01.png"/>그림1<br/>
+	<input type="radio" name="rdoBtn" value="img02.png"/>그림2<br/>
+	<input type="radio" name="rdoBtn" value="img03.png"/>그림3<br/>
+	
+	<button onclick="createImg();">이미지 생성하기</button>
+	<button onclick="deleteImg();">이미지 삭제하기</button>
+	
+	<div id="imgView"><img src=""></div>
+	
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js03-2</title>
+<script type="text/javascript">
+
+	// 명시적 함수
+	function func01(){
+		alert("명시적 함수!");
+	}
+	
+	// 익명 함수 , 이름이 없어야 된다.
+	// 함수 값은 변수에 저장될 수 있다. 이런 함수를 저장해준것
+	var func02 = function(){
+		alert("익명 함수!");
+		
+	}
+	
+	// 리터럴 함수 , literal 파라미터 값이 함수니까 출력
+	/* =함수 리터럴 */
+	function myLiteralPrn(literal){
+		literal("안녕하세요, 함수입니다.");
+	}
+	
+/* 	 	literal이 
+ 		function(msg){
+			alert(msg);
+		} 이 값을 받은거고 그래서 
+		
+		function(msg){
+			alert(msg);
+		}("안녕하세요, 함수입니다");
+		
+		이렇게된거죠?
+		근데 어떻게 alert이 안녕하세요 함수입니다 가 뜨죠?
+		alert에는 msg가 있는데?
+
+---->	function(msg){
+		alert(msg);
+		}("안녕하세요, 함수입니다");
+		
+		(안녕하세요 함수입니다.) 라는 값을 msg에 넣어서 실행하라 라는 뜻
+	
+ */
+/* 		func03 호출하면 myliteralprn 호출 
+		함수는 값이기 때문에 func(msg)받아서 alert(msg)를 하자 자체가 literal값
+		안녕하세요 함수입니다->msg에 들어가져서 alert됨	
+*/
+	function func03(){
+		myLiteralPrn(function(msg){
+			alert(msg);
+		});
+	}
+		
+	// 클로저 : 외부함수 안에 있는 내부함수 (외부 함수에 접근 가능 -> 변수, 파라미터)
+	// 큰 함수 안에 있는 작은 함수가 큰 함수에 있는 변수,파라미터 값을 사용할 수 있다.
+	function closureTest(val){
+		
+		var msg="!!!!!";
+		// 함수안에 함수 : 클로저 함수
+		function addVal(){
+			alert(val+msg);
+		}
+		return addVal;
+	}
+	
+	var amEdu = closureTest("Javascript");
+	
+	function pmEdu(val){
+		closureTest(val)();
+	
+		// clousureTest(val); ->(return) addVal;
+		var returnVal = closureTest(val); // returnVal의 type : function
+		returnVal();
+		
+		alert(returnVal);
+	}
+	
+	function valTest(){
+		var val="";
+		for(var i=0; i<arguments.length; i++){
+			val += arguments[i]+" ";	
+		}
+		alert(val);
+	}
+	
+	function valTest02(val1,val2,val3){
+		var result="";
+		for(var i=0; i<arguments.length; i++){
+			result += arguments[i]+" ";
+		}
+		alert(result);
+	}
+	
+	// arguments 라는 객체는 해당 함수의 파라미터(argument) 값을 자동으로 배열형태로 가지고 있는 것
+/*
+  valTest() 파라미터의 갯수를 지정해주지 않아도 받는건 무한.
+ */
+
+	
+	
+</script>
+</head>
+<body>
+	<h1>함수!!!!!!</h1>
+	
+	<h2>함수의 종류</h2>
+	<p onclick="func01();">1.명시적 함수</p>
+	<p onclick="func02();">2.익명 함수</p>
+<!-- 	<p onclick="alert(func02)";>2.익명 함수</p> -->
+	<p onclick="func03();">3.리터럴 함수</p>
+	
+	<hr/>
+	
+	<h2>클로져 (함수 리턴)</h2>
+	<label for="am">오전강의</label> <!-- for는 id와 연결되있는것 -->
+	<input type="text" id="am">
+	<input type="button" value="click" onclick="amEdu();">
+	
+	<label for="pm">오후 강의</label>
+	<input type="text" id="pm">
+	<input type="button" value="click" onclick="pmEdu(pm.value)"/>
+	
+	<h2 onclick="valTest('kh','정보','교육원','Qclass');">args(arguments)</h2>
+	
+	<h2 onclick="valTest02('배','고','프','다')">테스트</h2>
+	
+</body>
+</html>

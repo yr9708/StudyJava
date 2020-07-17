@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq18</title>
+<style type="text/css">
+	div{
+		border:1px solid red;
+	}
+</style>
+<script type="text/javascript" src="resources/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var cnt = 0;
+		$("button:eq(0)").click(function(){
+			$("#base").after("<div>새로운 엘리먼트(after)</div>"+(cnt++));
+		});
+		
+		$("button:eq(1)").click(function(){
+			$("<div>새로운 엘리먼트(insertAfter)</div>"+(cnt++)).insertAfter("#base");
+		});
+		
+		$("button:eq(2)").click(function(){
+			$("#base").before("<div>새로운 엘리먼트(before)"+(cnt++)+"</div>");
+		});
+		
+		$("button:eq(3)").click(function(){
+			$("<div>새로운 엘리먼트(insertBefore)</div>"+(cnt++)).insertBefore("#base");
+		})
+	});
+</script>
+</head>
+<body>
+	<button>after()</button>
+	<button>insertAfter()</button>
+	<Button>before()</Button>
+	<button>insertBefore()</button>
+	
+	<div id="base">
+		<p>외부 삽입 메서드</p>
+	</div>
+</body>
+</html>

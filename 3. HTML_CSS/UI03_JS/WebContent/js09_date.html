@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js09</title>
+<script type="text/javascript">
+// window.onload = function(){}
+	onload = function(){
+		document.getElementsByTagName("button")[0].onclick = testDate01;
+		document.getElementsByTagName("button")[1].onclick = testDate02;
+		document.getElementsByTagName("button")[2].onclick = testDate03;
+		document.getElementsByTagName("button")[3].onclick = testDate04;
+		document.getElementsByTagName("button")[4].onclick = testDate05;
+
+	}
+	
+    function testDate01() {
+        var inputDate = document.getElementById("today");
+        var date = new Date(); // 오늘 날짜 객체 생성
+        inputDate.innerHTML = date.toDateString() + "<br />";
+        inputDate.innerHTML += date.toLocaleDateString() + "<br />";
+        inputDate.innerHTML += date.toLocaleString() + "<br />";
+        inputDate.innerHTML += date.toLocaleTimeString() + "<br />";
+      }
+
+	function testDate02(){
+		var dayOfWeek = ["일","월","화","수","목","금","토"];
+		var date = new Date();
+		var year = date.getFullYear();
+		var month = date.getMonth() + 1; // java는 월이 0부터 시작이기때문에 +1 해줌
+		var day = date.getDate(); // 6/9 일
+		var week = date.getDay(); // 6/9일이 무슨 요일인지
+		
+		document.getElementById("today").innerHTML = year + "년 "+month + "월 "+ day + "일 "+ dayOfWeek[week]+"요일";
+	}
+	
+	function testDate03(){
+		var year = 2020;
+		var month = 4;
+		var day = 14;
+		var date = new Date(year,month-1,day);
+		
+		document.getElementById("specific").innerHTML = date;
+	}
+	
+	function testDate04(){
+		var dates = document.getElementById("dates").value;
+		var inputDate = document.getElementById("inputDate").value;
+		alert(inputDate+ " : "+typeof(inputDate));
+		
+		var date = new Date(dates);
+		date.setDate(date.getDate() +  parseInt(inputDate)); // paresInt로 하는 이유? : String타입으로 넘어오기 때문에
+		
+		document.getElementById("result").value = date.toLocaleDateString();
+	}
+	
+	function testDate05(){
+		var dates02 = document.getElementById("dates02").value;
+		var inputDate02 = document.getElementById("inputDate02").value;
+		
+		var nowDate = new Date(dates02);
+		var afterDate = new Date(inputDate02);
+		
+		console.log(nowDate.getTime());
+		
+		var resultVal = (afterDate.getTime() - nowDate.getTime()) / (1000 * 60 * 60 * 24); 
+		//1000분의 1초 * 분 * 시간 * 하루
+		
+		
+		
+		document.getElementById("result02").value = resultVal;
+		
+	}
+</script>
+</head>
+<body>
+	<h2>오늘 날짜 출력하기</h2>
+	<span id="today"></span><br/>
+	<button>오늘 날짜</button>
+	<button>오늘 날짜 표현</button>
+	
+	<hr/>
+	
+	<h2>특정 날짜 출력하기</h2>
+	<span id="specific"></span>
+	<br/>
+	<button>특정 날짜</button>
+	
+	<h2>경과 날짜 구하기</h2>
+	<label>지정 날짜</label>
+	<input type="date" id="dates" size="50"><br/>
+	<label>경과일</label>
+	<input type="number" id="inputDate"><br/>
+	<label>경과 후 날짜</label>
+	<input type="text" id="result" readonly="readonly"><br/>
+	<button>경과 날짜</button>
+	
+	<hr/>
+	<h2>D-Day</h2>
+	<label>시작 날짜</label>
+	<input type="date" id="dates02" size="50"/><br/>
+	<label>종료 날짜</label>
+	<input type="date" id="inputDate02"/><br/>
+	<label>남은 일수</label>
+	<input type="text" id="result02" readonly="readonly"/>
+	<button>남은 일수 구하기</button>
+	<!-- hint : getTime() = milliseconds 반환 -->
+	
+</body>
+</html>
