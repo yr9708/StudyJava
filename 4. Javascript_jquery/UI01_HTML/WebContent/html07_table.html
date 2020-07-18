@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html07</title>
+</head>
+<body>
+	<!-- 기본적으로 table을 많이 사용하고는 있다.
+	<div></div> 태그 사용해서 화면을 구조화 시켜야하는데 그게 귀찮아서 table 태그를 이용했다.
+	추천하지 않는다. -->
+	<h1>기본 테이블 만들기</h1>
+	<table border="1" style="width:300px";>
+	<!-- 테두리 굵기는 1, 가로 크기는 300px인 테이블 -->
+	<tr>
+		<th>컬럼1</th> <!-- 헤드는 가운데 정렬, 글자 두껍게된다 -->
+		<th>컬럼2</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+	</tr>
+	<tr>	
+		<td>3</td>
+		<td>4</td>
+	</tr>
+	</table>
+	
+	<h1>관련 태그 사용</h1>
+	<table border="1">
+		<caption>테이블의 제목</caption>
+		<colgroup> <!-- 컬럼 태그들을 모아놓은것 -->
+			<col width="100px"/> <!-- 컬럼 지정 -->
+			<col width="200px"/>
+			<col width="300px"/>
+		</colgroup>
+		
+		
+
+		
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+		
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>10</td>
+				<td>11</td>
+				<td>12</td>
+			</tr>
+		</tfoot>
+		
+		<thead>
+			<tr>
+				<th>컬럼1</th>
+				<th>컬럼2</th>
+				<th>컬럼3</th>
+			</tr>
+		</thead>
+		<!-- thead라는 태그를 위나 아래에 적어줘도 항상 테이블 위에 올라가있다 -->
+	</table>
+	
+	<h1>테이블 셀 병합하기</h1>
+	<table border="1">
+		<caption>병합 테이블</caption>
+		<thead style="background-color:gray;">
+			<tr>
+				<td>컬럼1</td>
+				<td>컬럼2</td>
+				<td>컬럼3</td>
+				<td>컬럼4</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td rowspan="2">1 (세로-열-합치기)</td>
+				<!-- 1번째 row와 2번째 row를 합칠거야 -->
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>			
+			</tr>
+			<tr>
+				<td>6</td>
+				<!--  -->
+				<td colspan="2">7 (가로-행-합치기)</td>
+				<td>8</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="4">가로-행-합치기</td>
+			</tr>
+		</tfoot>
+	</table>
+	
+	
+	
+	
+</body>
+</html>

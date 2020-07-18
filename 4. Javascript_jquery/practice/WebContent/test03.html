@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test03</title>
+
+
+ <style type="text/css">
+	
+ 	@font-face{
+		font-family:"Goyang";
+		src:url("font/Goyang.ttf") format("truetype");
+	}
+	
+	nav{
+		background-color:#91AB9C;
+	}
+	
+	nav a{
+		text-decoration:none;
+		color:gray;
+		padding:15px;
+		display:inline-block;
+		font-family:"Goyang";
+		font-size:30px;
+	}
+	
+	ul{
+		display:inline;
+		margin:0px;
+		padding:0px;
+	}
+	
+	ul li{display: inline-block;}
+	ul li:hover{background:#FFE1E0;}
+	ul li:hover ul{display:block;}
+	ul li ul{
+		position:absolute;
+		width:200px;
+		display:none;
+	} 
+	ul li ul li{
+		background-color:#FFE1E0;
+		display:block;
+	}
+	
+	ul li ul li a{
+		display:block !important; 
+					
+	}
+	
+	ul li ul li:hover{background-color:#BDB9C9;}
+	
+	.input01{
+		background-color:#f5f5f5;
+		border: 1px solid #ebebeb;
+		padding: 7px;
+	}
+	
+	.input01:placeholder{
+		font-weight: 400;
+		font-size: 13px;
+		color:#969696;
+	} 
+/* 	
+	nav{
+		background-color:indianred;
+	}
+	
+	nav a {
+		text-decoration:none;
+		display:inline-block;
+	}
+	
+	ul{
+		display:inline;
+	}
+	
+	ul li{
+		display:inline-block;
+	}
+	
+	ul li:hover ul{display:block;}
+	ul li ul{
+		position:absolute;
+		display:none;
+	} 
+	
+	ul li ul li {
+		display:block;
+	}
+	
+	ul li ul li a{
+		display:block;
+	}
+	
+	ul li ul li:hover{
+		background-color:gray;
+		color:red;
+		} */
+	
+	
+</style> 
+
+
+</head>
+<body>
+	<h2>서브 메뉴가 펼쳐지는 네비게이션 만들기</h2>
+	<hr/>
+	<header>
+		<nav>
+			<ul id="navi">
+				<li>
+					<a href="#">HOME</a>
+				</li>
+					<li>
+				<a href="#">웹개발</a>
+					<ul>
+						<li><a href="#">웹디자인</a></li>
+						<li><a href="#">HTML5+CSS3</a></li>
+						<li><a href="#">JQUERY</a></li>
+						<li><a href="#">웹 모바일</a></li>
+					</ul>
+					</li>
+				<li>
+					<a href="#">게시판</a>
+					<ul>
+						<li><a href="#">Q & A</a></li>
+						<li><a href="#">방명록</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="views/test/productForm.html">상품주문서</a>
+				</li>
+				</ul>
+		</nav>
+	</header>
+
+	
+</body>
+</html>
