@@ -1,0 +1,21 @@
+
+6월 08, 2020 15:42:31.25 NEW SESSION
+6월 08, 2020 15:42:31.25 [16500:7000:0608/154231.238:ERROR:socket_stream.cc(218)] Closing stream with result -2
+6월 08, 2020 17:27:49.81 [16500:18844:0608/172749.809:ERROR:get_updates_processor.cc(258)] PostClientToServerMessage() failed during GetUpdates with error 2
+6월 08, 2020 17:27:50.23 [16500:7000:0608/172750.192:ERROR:socket_stream.cc(218)] Closing stream with result -2
+6월 08, 2020 17:27:53.38 [16500:7000:0608/172753.382:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+6월 08, 2020 18:46:41.59 [16500:7000:0608/184641.599:ERROR:socket_stream.cc(218)] Closing stream with result -2
+6월 08, 2020 19:54:42.90 [16500:7000:0608/195442.904:ERROR:socket_stream.cc(218)] Closing stream with result -2
+6월 09, 2020 01:44:36.70 [16500:7000:0609/014436.708:ERROR:socket_stream.cc(218)] Closing stream with result -2
+6월 09, 2020 02:05:23.30 [16500:7000:0609/020523.301:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+6월 09, 2020 02:25:46.84 [16500:7000:0609/022546.843:ERROR:socket_stream.cc(218)] Closing stream with result -2
+6월 09, 2020 05:25:50.51 [16500:7000:0609/052550.514:ERROR:socket_stream.cc(218)] Closing stream with result -2
+6월 09, 2020 05:25:54.97 [16500:7000:0609/052554.979:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -105
+6월 09, 2020 08:49:33.48 [16500:7000:0609/052558.007:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+6월 09, 2020 08:49:33.49 [16500:7000:0609/084933.332:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -105
+6월 09, 2020 14:33:31.13 [9612:12844:0609/143331.135:ERROR:CONSOLE(152)] "Uncaught (in promise) TypeError: Cannot read property 'contentElement' of undefined", source: devtools://devtools/bundled/inline_editor/inline_editor.js (152)
+6월 09, 2020 16:32:13.68 [9612:12844:0609/163213.686:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'selectedTreeElement' of null", source:  (0)
+6월 09, 2020 16:32:13.79 [9612:12844:0609/163213.798:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'selectedTreeElement' of null", source:  (0)
+
+6월 11, 2020 16:29:17.16 NEW SESSION
+6월 11, 2020 16:29:17.16 [10924:9788:0611/162917.165:ERROR:socket_stream.cc(218)] Closing stream with result -2

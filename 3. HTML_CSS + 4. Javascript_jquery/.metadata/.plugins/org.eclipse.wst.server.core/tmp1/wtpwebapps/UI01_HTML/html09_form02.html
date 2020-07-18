@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html09</title>
+</head>
+<body>
+	<h1>select 요소</h1>
+	<form action="#" method="get">
+		<fieldset>
+			<legend>여러줄 글 상자와 목록 상자</legend>
+				<p>
+					<label for="reply">답글</label>
+					<textarea rows="3" cols="30" id="reply" name="re"></textarea>
+				</p>
+				
+				<p>
+					과목 선택
+					<select name="sel01">
+						<option value="html">HTML</option>
+						<option value="css">CSS</option>
+						<option value="javascript">JAVASCRIPT</option>
+						<option value="jquery">JQUERY</option>
+					</select>
+				</p>
+				
+				<p>
+					간식
+					<select name="sel02">
+					
+						<optgroup label="분식">
+							<option value="dduckbokki">떡볶이</option>
+							<option value="sun-dai">순대</option>
+							<option value="mandu">만두</option>
+							<option value="tuikim">튀김</option>
+							<option value="jjolmen">쫄면</option>
+						</optgroup>
+						
+						<optgroup label="과자">
+							<option value="pocachip">포카칩</option>
+							<option value="butterring">버터링</option>
+							<option value="mam's pie">엄마손파이</option>
+							<option value="chaldduck pie">찰떡파이</option>
+							<option value="kkobuckchip">꼬북칩</option>
+							<option value="homerun ball">홈런볼</option>
+						</optgroup>
+					</select>
+				</p>
+			<input type="submit" value="전송"/>
+		</fieldset>
+	
+	</form>
+</body>
+</html>

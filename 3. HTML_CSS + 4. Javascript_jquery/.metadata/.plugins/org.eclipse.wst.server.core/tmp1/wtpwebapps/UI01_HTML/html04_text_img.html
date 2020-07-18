@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html04</title>
+</head>
+<body>
+	<h1>Text</h1>
+	<p>
+		<b>진하게(&lt;b&gt;)</b><br/>
+		<strong>진하게(&lt;strong&gt;)</strong><br/>
+		<em>기울임(&lt;em&gt;)</em><br/>
+		<i>기울임(&lt;i&gt;)</i><br/>
+		<small>작은 텍스트 표시, (&lt;small&gt;)</small>코멘트<br/>
+		윗<sup>첨자</sup>(&lt;sup&gt;)<br/>
+		아래<sub>첨자</sub>(&lt;sub&gt;)<br/>
+		<ins>내용 추가(&lt;ins&gt;)</ins><br/>
+		<del>삭제(&lt;del&gt;)</del><br/>
+	</p>
+	
+	<hr/>
+	
+	<h1>img</h1>
+	<img alt ='lion.icon' src='image/img00.jpg' width="200px" height="200px"/>
+<!-- 
+	px : 픽셀 (해상도 별 상대크기)
+	pt : 포인트 (1pt = 약 0.72인치)
+	%, em, rem : 지정/상속 등에 대한 백분율 (상대크기)
+ -->
+ 
+ <h3>이미지에 링크 걸기</h3>
+ 	<a href="index.html" title="go index!!">
+ <img alt="test" src="image/img00.jpg" width="100px" height="100px"/>
+	</a>
+	
+	<h3>이미지 맵</h3>
+	 <img alt="test" src="image/img00.jpg" width="100px" height="100px" usemap="#my"/>
+	<map name="my">
+		<area alt="" shape="rect" coords="25,25,75,75" href="index.html" title="가즈아 index!!"/>
+	</map> <!-- rect 사각형 속성 -->
+	
+	
+</body>
+</html>

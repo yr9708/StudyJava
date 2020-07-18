@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+ <title>카카오</title>
+ <link href="resources/images/favicons.png" rel="shortcut icon"/>
+<script type="text/javascript" src="resources/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+function logoblack(){
+	var logo = document.getElementById("logo");
+	logo.src = "resources/images/logo_kakao.png";
+}
+
+function logowhite(){
+	var logo = document.getElementById("logo");
+	logo.src = "resources/images/logo_kakao_white.png";
+	
+}
+	
+</script>
+
+
+    <style type="text/css">
+    body,th,td,input,select,textarea,button{font-size:16px;line-height:1.5;font-family:'NotoSans Light','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;color:#666}
+    
+    a{text-decoration:none}
+	a:active{background-color:transparent}
+	
+	.menu{
+		display:block;
+		height: 60px;
+		text-align:center;
+	}
+	
+	.menu:hover{
+		background-color:white;
+	}
+	
+    nav{
+    	z-index:90;
+    	position:fixed;
+    	max-width: 1760px;
+    	display:inline-block;
+	}
+	
+	nav:hover li.nav__list01-item a{
+		color:black;
+	}
+	
+	nav:hover .kor{
+		color:black;
+	}
+	
+      nav ul li {
+    	text-decoration:none;
+        display: inline-block;
+      }
+      nav li {
+        position: relative;
+      }
+      nav li ul.nav__list02 {
+        display: none;
+        position: absolute;
+		width:1520px;
+		/* left:calc(50% - 600px); */
+		border-bottom: 1px solid #d4d4d4;
+		background-color: white;;
+		
+      }
+      
+      nav li:hover ul.nav__list02 {         
+        display:block;
+      }
+      
+      ul.nav__list03 {
+        width: max-content;
+        display: block;
+      }
+      
+      .nav__list01{
+      	display:inline-block;
+      }
+    .nav__list01-item{
+    	padding-left:13px;
+    	padding-right:14px;
+    	height: 60px;
+    }  
+     
+	.nav__list01-item a{
+		color:white;
+	}
+	
+	.nav__list02-item a{
+		color:black;
+	}
+      
+    .main_visual{
+	    position: relative;
+      }
+      
+     .k_e{
+	     margin-right: 40px;
+	     display:inline-block; 
+	     float:right;
+     }
+     
+     .k_e .kor{
+     	color:white;
+     }
+     
+     .eng{
+     	color:gray;
+     }
+     
+     .eng:hover{
+     	color:black;
+     }
+     
+     body{
+	    margin-top: 0px;
+	    margin-left: 0px;
+	    margin-right: 0px;    	
+     }
+     
+     #kakaoLogo{
+	     display:inline-block; 
+	     float:left;
+	     margin-left: 70px;
+     }
+     
+/*      .line{
+     	position:absolute;
+     	left:9px;
+     	right:9px;
+     	bottom:-1px;
+     	height: 2px;
+     	background-color:black;
+     } */
+     
+     .text{
+		position: absolute;
+    	top: 140px;
+	    color: white;
+	    font-size: 22pt;
+	    margin-left: 60px;
+	    font-weight:bold;
+     }
+     .summary_info{
+     	display:block;
+     	width: 33.3%;
+    	box-sizing: border-box;
+    	float: left;
+    	padding: 0 20px;
+     }
+     
+     .main_summary .summary_info h3{
+        font-weight: normal;
+   		font-size: 14px;
+   		color:#1e1e1e;
+     }
+     
+	.main_summary{
+		padding-top: 35px;
+	    overflow: hidden;
+	    max-width: 1800px;
+	    margin: 0 auto;
+	    padding-left: 60px;
+	    padding-right: 60px;
+	}
+	
+	.summary_info a{
+		font-size: 20px;
+	 	color:black;
+	}
+	
+	.summary_info a:hover{
+		text-decoration:underline;
+	}
+	
+	.summary_info p{
+		padding-top: 8px;
+	    font-size: 14px;
+	    line-height: 22px;
+	    color: #666;		
+	}
+
+	
+	#num_stock{
+		font-size: 32px;
+	    font-weight: bold;
+	    color: #1e1e1e;
+	}
+	
+	#num_up{
+		display:inline-block;
+		color:red;
+		font-size: 20px;
+	}
+	
+	.txt_date{
+		display: block;
+	    font-size: 9pt;
+	    color:#666;
+	}
+	
+	#stock{
+		padding-top: 33px;
+		padding-bottom: 33px;
+	}
+	
+	.main_service{
+		padding-top: 76px;
+		padding-left: 60px;
+	    padding-right: 60px;
+	}
+	
+	.main_service .summary_info h3{
+		font-weight: normal;
+   		font-size: 14px;
+   		color:#1e1e1e;
+		position: absolute;
+	    padding-left: 15px;
+	    font-family: 'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;
+	}
+	
+	footer{
+		height:100px;
+	}
+	
+	.info_svc{
+		display:inline-block;
+		margin-right: 12px;
+    	font-size: 12px;
+    	text-decoration: none;
+    	color:#666;;
+	}
+	
+	.info_svc a{
+		color:#666;
+	}
+	
+	.info_svc:hover{
+		font-weight:bold;
+		color:black;
+		
+	}
+	
+	.info_copyright{
+		padding-left: 60px;
+ 	   padding-right: 60px;
+ 	   wigth:800px;
+ 	   height:44px;
+	}
+	
+	.wrap_copyright{
+	    padding-top: 22px;
+	}
+	
+	.relation_svc{
+		position: relative;
+	    float: right;
+	    top: -45px;
+	}
+	
+	.relation_svc a{
+		color:#666;
+		font-size:12px;
+	}
+	
+	.link_tit{
+		border-color: #1e1e1e;
+    	color: #1e1e1e;
+    	border-bottom: 1px solid #4d4d4d;
+    	height: 29px;
+	}
+	
+	::-moz-selection{background:rgba(255,238,51,0.99)}
+	::selection{background:rgba(255,238,51,0.99)}
+	
+    </style>
+  </head>
+  <body>
+    <nav>
+    <header class="menu" style="width:1520px;" onmouseover="logoblack();" onmouseout="logowhite();">
+    <p id="kakaoLogo" >
+    	<a href="#" id="logo_location">
+    		<img id="logo" alt="kakao" src="resources/images/logo_kakao_white.png">
+    	</a>
+    </p>
+      <ul class="nav__list01">
+        <li class="nav__list01-item">
+          <a href="#">카카오</a>
+          <span class="line"></span>
+          <ul class="nav__list02">
+            <li class="nav__list02-item">
+              <a href="#">카카오 소개</a>
+              <ul class="nav__list03">
+                <li class="nav__list03-item"><a href="#">비전</a></li>
+                <li class="nav__list03-item"><a href="#">카카오문화</a></li>
+                <li class="nav__list03-item"><a href="#">걸어온 길</a></li>
+                <li class="nav__list03-item"><a href="#">CI</a></li>
+                <li class="nav__list03-item"><a href="#">윤리규정</a></li>
+              </ul>
+            </li>
+            <li class="nav__list02-item">
+              <a href="#">카카오 AI</a>
+              <ul class="nav__list03">
+                <li class="nav__list03-item"><a href="#">소개</a></li>
+                <li class="nav__list03-item"><a href="#">알고리즘 윤리</a></li>
+              </ul>
+            </li>
+            <li class="nav__list02-item"><a href="#">자회사</a></li>
+            <li class="nav__list02-item">
+              <a href="#">비즈니스</a>
+              <ul class="nav__list03">
+                <li class="nav__list03-item"><a href="#">광고 안내</a></li>
+                <li class="nav__list03-item"><a href="#">제휴 안내</a></li>
+                <li class="nav__list03-item">
+                  <a href="#">"kakao for Business"</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__list02-item">
+              <a href="#">홍보채널</a>
+              <ul class="nav__list03">
+                <li class="nav__list03-item"><a href="#">보도자료</a></li>
+                <li class="nav__list03-item"><a href="#">브랜드 영상</a></li>
+                <li class="nav__list03-item"><a href="#">미디어 행사</a></li>
+                <li class="nav__list03-item">
+                  <a href="#">Kakao Travle Day</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__list02-item"><a href="#">오시는 길</a></li>
+          </ul>
+        </li>
+        <li class="nav__list01-item">
+    		<a href="#">투자정보</a>
+    		<ul class="nav__list02">
+             <li class="nav__list02-item">
+              <a href="#">경영정보</a>
+              <ul class="nav__list03">
+                <li class="nav__list03-item"><a href="#">주주구성</a></li>
+                <li class="nav__list03-item"><a href="#">이사회</a></li>
+                <li class="nav__list03-item"><a href="#">정관</a></li>
+                <li class="nav__list03-item"><a href="#">기업지배구조</a></li>
+              </ul>
+            </li>   
+	            <li class="nav__list02-item">
+	              <a href="#">공시정보</a></li>			
+	             <li class="nav__list02-item">
+	              <a href="#">주가정보</a></li>	   		
+	            <li class="nav__list02-item">
+	              <a href="#">재무정보</a>	    		
+              <ul class="nav__list03">
+                <li class="nav__list03-item"><a href="#">연결재무제표</a></li>
+                <li class="nav__list03-item"><a href="#">별도재무제표</a></li>
+                <li class="nav__list03-item"><a href="#">신용등급</a></li>
+              </ul>
+    			</li>
+    			<li class="nav__list02-item"><a href="#">IR일정</a>
+    				<ul class="nav__list03">
+    					<li class="nav__list03-item"><a href="#">IR행사</a></li>
+    					<li class="nav__list03-item"><a href="#">주주총회</a></li>
+    					<li class="nav__list03-item"><a href="#">IR 미팅예약</a></li>
+    				</ul>
+    			</li>
+    			<li class="nav__list02-item"><a href="#">IR자료실</a>
+    				<ul class="nav__list03">
+    					<li class="nav__list03-item"><a href="#">실적발표</a></li>
+    					<li class="nav__list03-item"><a href="#">정기보고서</a></li>	
+    					<li class="nav__list03-item"><a href="#">IR FAQ</a></li>
+    				</ul>
+    			</li>
+    			<li class="nav__list02-item"><a href="#">증권사커버리지</a></li>
+    		</ul>
+        </li>
+        <li class="nav__list01-item"><a href="#">서비스</a>
+        	<ul class="nav__list02">
+        		<li class="nav__list02-item"><a href="#">포털</a>
+        			<ul class="nav__list03">
+        				<li class="nav__list03-item"><a href="">Daum</a></li>
+        				<li class="nav__list03-item"><a href="">Daum 뉴스</a></li>
+        				<li class="nav__list03-item"><a href="">Daum 검색</a></li>
+        			</ul>
+        		</li>
+        		<li class="nav__list02-item"><a href="#">커뮤니케이션</a>
+        			<ul class="nav__list03">
+        				<li class="nav__list03-item"><a href="#">카카오톡</a></li>
+        				<li class="nav__list03-item"><a href="#">카카오스토리</a></li>
+        				<li class="nav__list03-item"><a href="#">카카오톡치즈</a></li>
+        				<li class="nav__list03-item"><a href="#">Daum메일</a></li>
+        				<li class="nav__list03-item"><a href="#">Daum카페</a></li>
+        				<li class="nav__list03-item"><a href="#">아지트</a></li>
+        				<li class="nav__list03-item"><a href="#">티스토리</a></li>
+        				<li class="nav__list03-item"><a href="#">브런치</a></li>
+        				<li class="nav__list03-item"><a href="#">멜론 아지톡</a></li>
+        				<li class="nav__list03-item"><a href="#">카카오메일</a></li>
+        			</ul>
+        		</li>
+        		<li class="nav__list02-item"><a href="#">콘텐츠</a>
+        			<ul class="nav__list03">
+        				<li class="nav__list03-item"><a href="#">카카오페이지</a></li>
+        				<li class="nav__list03-item"><a href="#">카카오TV</a></li>
+        				<li class="nav__list03-item"><a href="#">카카오뮤직</a></li>
+        				<li class="nav__list03-item"><a href="#">카카오프렌즈</a></li>
+        				<li class="nav__list03-item"><a href="#">Daum 웹툰</a></li>
+        				<li class="nav__list03-item"><a href="#">1boon</a></li>
+        				<li class="nav__list03-item"><a href="#">멜론</a></li>
+        				<li class="nav__list03-item"><a href="#">멜론티켓</a></li>
+        			</ul>       		
+        		</li>
+        		<li class="nav__list02-item"><a href="#">커머스</a>
+         			<ul class="nav__list03">
+        				<li class="nav__list03-item"><a href="#">카카오톡 선물하기</a></li>
+        				<li class="nav__list03-item"><a href="#">카카오스타일</a></li>
+        				<li class="nav__list03-item"><a href="#">카카오톡 쇼핑하기</a></li>
+        				<li class="nav__list03-item"><a href="#">쇼핑하우</a></li>       			
+        			</ul>
+        		</li>
+        		<li class="nav__list02-item"><a href="#">게임</a>
+          			<ul class="nav__list03">
+        				<li class="nav__list03-item"><a href="#">카카오 게임즈</a></li>    			
+        			</ul>       			
+        		</li>
+        		<li class="nav__list02-item"><a href="#">핀테크</a>
+           			<ul class="nav__list03">
+        				<li class="nav__list03-item"><a href="#">카카오 페이</a></li>    			
+        			</ul>        			
+        		</li>
+        		<li class="nav__list02-item"><a href="#">모빌리티&라이프</a>
+         			<ul class="nav__list03">
+        				<li class="nav__list03-item"><a href="#">카카오 T</a></li>
+        				<li class="nav__list03-item"><a href="#">카카오 T 대리</a></li>
+        				<li class="nav__list03-item"><a href="#">카카오내비</a></li>
+        				<li class="nav__list03-item"><a href="#">카카오맵</a></li>   
+         				<li class="nav__list03-item"><a href="#">카카오버스</a></li>
+        				<li class="nav__list03-item"><a href="#">카카오지하철</a></li>
+        				<li class="nav__list03-item"><a href="#">카카오헤어샵</a></li>       				    			
+        			</ul>        			
+        		</li>
+        		<li class="nav__list02-item"><a href="#">소셜임팩트</a>
+          			<ul class="nav__list03">
+        				<li class="nav__list03-item"><a href="#">카카오 같이가치</a></li>
+        			</ul>  		
+        		</li>
+        	</ul>
+        </li>
+        <li class="nav__list01-item"><a href="#">소셜임팩트</a></li>
+        <li class="nav__list01-item"><a href="#">고객지원</a></li>
+        <li class="nav__list01-item"><a href="#">인재영입</a></li>
+      </ul>
+      <p class="k_e">
+      	<a href="#" class="kor">KOR</a>
+      	<a href="#" class="eng">ENG</a>
+      </p>
+    </header>
+      </nav>
+    <div id="content">
+    	<div id="main">
+			<div id="article" style="height:1500px;">
+				<div id="main_content">
+					<div class="main_visual"  style="min-height: 602px; max-height: 842px;">
+						<img src="resources/images/img01.png" style="width:100%; z-index:0;">
+						<div class="text">일상에 필요한 모든것들을 연결해주는<br/>
+						당신과 가장 가까운 인공지능을 만나보세요.</div>
+					</div>
+					<div class="main_summary">
+						<div class="summary_info">
+							<h3>PRESS RELEASE</h3>
+							<a href="https://www.kakaocorp.com/kakao/prChannel/pressReleasesView?boardIdx=10143">
+								<strong id="campain">"카카오같이가치, BH엔터네인먼트와 손잡고 '힐링 사운드' 캠패인 진행"</strong>
+							</a>
+							<p>
+                           	- BH엔터 소속 배우 박보영, 박성훈, 진구, 한지민, 한효주 참여해 사운드 콘텐츠 제작- 같이가치 홈페이지, 카카오미니 등에서 제공… 1회 감상 시 1천원 기부 적립, 카카오미니 1천대도 기부- ...</p>
+						</div>
+						<div class="summary_info">
+							<h3>STOCK</h3>
+							<div id="stock" >
+								<span id="num_stock">
+									266,000
+									<span></span>
+								</span>
+								<div id="num_up">
+									<span style="margin-left: 18px;">▲</span>
+									<span>1,000
+										<span></span>
+									</span>
+								</div>
+							</div>
+							<span class="txt_date">2020-06-14 15:12:10</span>
+						</div>
+						<div class="summary_info">
+							<h3>PRIVACY POLICY</h3>
+							<a href="https://privacy.kakao.com/main?lang=ko" id="policy">
+								<strong>카카오는 데이터의 연결과 보호의 균형을 위해
+								<br>
+								언제나 최선을 다 하겠습니다.
+								</strong>
+							</a>
+						</div>
+					</div>
+					<div class="main_service">
+						<div class="summary_info">
+							<h3>SERVICE</h3>
+							<div>
+							<img alt="service" src="resources/images/img05.jpg" style="width:100%">
+								<a href="https://t1.kakaocdn.net/kakaocorp/admin/co/main-content/4518.jpg"><strong>언제 어디서나 무료로 간편하게! 사람과,세상그 이상을 연결하는 카카오톡</strong></a>
+								<p>
+	                               채팅은 물론 일정 관리, 송금, #검색 등 다양한 기능을 제공하는 카카오톡은 우리의 생활을 보다 편리하게 만들어 주고 있습니다. 카카오톡을 통해 세상의 정보와 즐길거리에 보다 가까이 ...
+								</p>
+							</div>
+						</div>
+						<div class="summary_info">
+							<h3 style="color:white;">TECH</h3>
+							<div>
+								<img alt="tech" src="resources/images/img07.jpg" style="width:100%">
+								<a href="https://tech.kakao.com/"><strong>새로워진 kakao Tech를 소개합니다.</strong></a>
+								<p>
+								기술 행사와 오픈소스, 후원, 채용 등 카카오의 기술 관련 종합적인 정보를 제공할 수 있도록 개편했습니다....							
+								</p>
+							</div>
+						</div>
+						<div class="summary_info">
+							<h3>SOCIAL IMPACT</h3>
+							<div>
+								<img alt="socialImpact" src="resources/images/img06.png" style="width:100%">
+								<a href="http://blog.kakaocorp.co.kr/679"><strong>세계 행복의 날 기념, 같이가치 ‘안녕하세요’ 캠페인을 소개합니다!</strong></a>
+								<p>
+								'세계 행복의 날'이라는 기념일을 들어보신 적 있나요? 2012년 국제연합(UN)이 모든 사람들이 행복하게 살 수 있도록 전 세계가 함께 노력하자는 취지로 매년 3월 20일을 '세계 ...
+								</p>
+							</div>		
+						</div>
+					</div>
+				</div>
+			</div>
+    	</div>
+    </div>
+    <div style="width:1000px"></div>
+    <hr>
+    <footer id="kakaoFoot" class="foot_kakao" style="display:block;">
+    	<div class="wrap_copyright">
+    		<div class="info_copyright">
+    			<div class="info_svc">
+    				<a href="#">이용약관<span class="ico_crop ico_arr"></span></a>
+    			</div>
+    			<div class="info_svc">
+    				<a href="#">위치기반서비스이용약관<span class="ico_crop ico_arr"></span></a>
+    			</div>    
+    			<div class="info_svc">
+    				<strong><a href="#" style="color:black;">개인정보처리방침<span class="ico_crop ico_arr"></span></a></strong>
+    			</div>    			
+     			<div class="info_svc">
+    				<a href="#">운영정책</a>
+    			</div>   			
+     			<div class="info_svc">
+    				<a href="#">청소년보호정책<span class="ico_crop ico_arr"></span></a>
+    			</div>   			
+     			<div class="info_svc">
+    				<a href="#">권리침해신고안내<span class="ico_crop ico_arr"></span></a>
+    			</div>   			
+     			<div class="info_svc">
+    				<a href="#">공지사항<span class="ico_crop ico_arr"></span></a>
+    			</div>
+    			<div class="info_svc">
+    				<a href="#">사이버윤리실</a>
+    			</div>
+    			<small style="display:block;">
+    				Copyright © 
+    				<a href="https://www.kakaocorp.com/main" style="color:#666;">kakao Corp.</a>
+    				 All rights reserved.
+    			</small>				
+	    		<div class="relation_svc">
+	    			<a href="#" class="link_tit">관련사이트　　　+
+	    				<span class="ico_corp ico_arr"></span>
+	    			</a>
+	    		</div>
+    		</div>
+    	</div>
+    </footer>
+  </body>
+</html>

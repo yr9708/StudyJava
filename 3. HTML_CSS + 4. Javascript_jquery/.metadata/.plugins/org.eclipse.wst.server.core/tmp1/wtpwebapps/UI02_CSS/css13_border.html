@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css13</title>
+<style type="text/css">
+	*{
+		padding: 0px;
+		margin: 0px;
+		text-align:center;
+	}
+	
+	body{
+		font:30px "Arial Black";
+		color: #333;
+		margin: 20px;
+	}
+	
+	li{
+		list-style: none;
+		width: 100px;
+		height: 100px;
+		float: left;
+	/* 	border-radius: 60px 100px 40px 10px; */
+		border-radius: 50px 50px 50px 50px; 
+		/* 왼쪽위 오른쪽위 오른쪽아래 왼쪽아래 순서로 곡률을준다 */
+		
+		-webkit-border-radius: 50px 50px 50px 50px;
+		-moz-borer-radius:50px 50px 50px 50px;
+		-ms-border-radius:50px 50px 50px 50px;
+		-o-border-radius:50px 50px 50px 50px;
+		
+		box-shadow: inset 20px 30px 20px 1px rgba(18, 52, 86, 0.8);
+		
+		/*
+			webkit : 구글, 사파리
+			moz : 파이어폭스
+			ms : 익스플로러
+			o : 오페라
+		*/
+		line-height:100px;
+	}
+	
+	.c1{background-color: indianred;
+		}
+	.c2{background-color: darkseagreen;}
+	.c3{background-color: skyblue;}
+	.c4{background-color: LightPink;}
+	
+
+</style>
+</head>
+<body>
+	<ul>
+		<li class="c1">J</li>
+		<li class="c2">A</li>
+		<li class="c3">V</li>
+		<li class="c4">A</li>
+	</ul>
+
+</body>
+</html>

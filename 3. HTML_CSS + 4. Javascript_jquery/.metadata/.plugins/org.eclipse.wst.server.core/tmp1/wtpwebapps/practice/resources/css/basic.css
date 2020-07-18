@@ -1,0 +1,48 @@
+/* body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0}
+fieldset,img{border:0 none}
+
+blockquote, q{quotes:none}
+blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+input,select,textarea,button{vertical-align:middle}
+input::-ms-clear{display:none}
+input::-webkit-contacts-auto-fill-button {visibility:hidden;display:none !important;pointer-events:none;position:absolute;right:0}
+button{border:0 none;border-radius:0;background-color:transparent;cursor:pointer}
+body{background:#white;word-wrap:break-word;word-break:keep-all}
+body,th,td,input,select,textarea,button{font-size:16px;line-height:1.5;font-family:'NotoSans Light','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;color:#666}
+a{color:#333;text-decoration:none}
+a:active, a:hover{text-decoration:underline}
+a:active{background-color:transparent}
+address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal} */
+/* dl,ul,ol,menu,li{list-style:none} */
+
+.list_sub { /* 전체 네비게이션*/
+	
+	
+}
+
+.link_gnb { /* 카카오, 투자정보, 서비스.. */
+	display:inline-block;
+}
+
+
+.link_gnb:hover{
+	color:red;
+	display:inline-block;
+}
+
+.tit_sub { /* 카카오 소개 , 카카오 AI ...*/
+	display:none;
+}
+
+
+
+.link_sub{ /* 비전, 카카오문화, 걸어온길... */
+
+	display:block; 
+	padding:6px;
+	line-height:18px;
+}
+
+
+
+

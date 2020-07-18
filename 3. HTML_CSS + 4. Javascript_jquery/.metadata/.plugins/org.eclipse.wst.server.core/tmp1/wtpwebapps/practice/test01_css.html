@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	input:focus{
+		background-color:orangered;
+	}
+	input:checked{
+		width:20px;
+		height:20px;
+	}
+	.btn:hover{
+		background-color:red;
+		cursor:pointer;
+	}
+	
+	textarea:focus{
+		background-color:black;
+		color:white;
+	}
+	
+
+</style>
+</head>
+<body>
+	<h2>회원가입</h2>
+	<form>
+	<fieldset>
+		<legend>필수 입력 정보</legend>
+		<table>
+			<tr>
+				<td><label for="id" >아이디 : </label></td>
+				<td><input type="text" id="id" placeholder="아이디를 입력하세요" required ></td>
+			</tr>
+			<tr>
+				<td><label for="pw">비밀번호 : </label></td>
+				<td><input type="password" id="pw" placeholder="비밀번호를 입력하세요"></td>
+			</tr>
+			<tr>
+				<td><label for="chkpw">비밀번호확인 : </label></td>
+				<td><input type="password" id="chkpw" placeholder="비밀번호를 다시입력하세요"><td>
+			</tr>
+			<tr>
+				<td><label for="name">이름 : </label></td> <!-- 5칸 영어는 mexlength 5 한글은 maxlength10 -->
+				<td><input type="text" id="name" placeholder="이름을 입력하세요" maxlength="5"></td>
+			</tr>
+			<tr>
+				<td><label for="emamil">이메일 : </label></td>
+				<td><input type="text" id="email" placeholder="이메일을 입력하세요" ></td>
+			</tr>
+			<tr>
+				<td><label for="phone">휴대전화번호 : </label></td>
+				<td><input type="number" id="phone" placeholder="휴대폰 번호를 입력하세요"></td>
+			</tr>
+			<tr>
+				<td><label for="homepage">홈페이지 : </label></td>
+				<td><input type="text" id="homepage" value="http://"></td>
+			</tr>
+		</table>
+	</fieldset>
+	<fieldset>
+		<legend>추가 입력 정보</legend>
+		<table>
+			<tr>
+				<td><label for="national">국적 : </label></td>
+				<td>
+				<select id="national" size="2" multiple>
+						<option value="한국">한국</option>
+						<option value="중국">중국</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="birth">생년월일 : </label></td>
+				<td><input type="date" id="birth"></td>
+			</tr>
+			<tr>
+				<td><label for="gender">성별 : </label></td>
+				<td><input type="radio" name="gender" value="남자">남자
+					<input type="radio" name="gender" value="여자">여자
+				</td>
+			</tr>
+			<tr>
+				<td><label for="hubby">취미 : </label></td>
+				<td>
+					<input class="chk" type="checkbox" name="hubby" value="낚시">낚시
+					<input class="chk" type="checkbox" name="hubby" value="게임">게임
+					<input class="chk" type="checkbox" name="hubby" value="요리">요리
+				</td>
+			</tr>
+			<tr>
+				<td><label for="msg">특이사항 : </label></td>
+				<td><textarea id="msg" rows="5" cols="30"></textarea></td>
+			</tr>								
+		</table>
+	
+	</fieldset>
+	<input type="submit" value="가입하기">
+	<input type="reset" value="취소하기">
+	<button class="btn">올리면 배경색+커서 바뀌기</button>
+	</form>
+	
+	<hr>
+	
+	<table id="test02" border="1">
+		<caption>kh리조트 대관 안내</caption>
+		<thead>
+		<tr>
+			<td>층</td>
+			<td>객실명</td>
+			<td>정원</td>
+			<td>가격</td>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td rowspan="6">2층</td>
+			<td rowspan="2">사랑방</td>
+			<td rowspan="2">4명</td>
+			<td>평일 : 300,000원<input type="button" value="예약하기"></td>
+		</tr>
+		<tr>
+			<td>주말 : 500,000원<input type="button" value="예약하기"></td>
+		</tr>
+		<tr>
+			<td rowspan="2">행복방</td>
+			<td rowspan="2">6명</td>
+			<td>평일 : 400,000원<input type="button" value="예약하기"></td>			
+		</tr>
+		<tr>
+			<td>주말 : 600,000원<input type="button" value="예약하기"></td>
+		</tr>
+		<tr>
+			<td rowspan="2">코딩방</td>
+			<td rowspan="2">무제한</td>
+			<td>평일 : 800,000원<input type="button" value="예약하기"></td>
+		</tr>
+		<tr>
+			<td>주말 : 990,000원<input type="button" value="예약하기"></td>
+		</tr>
+		<tr>
+			<td colspan="4" id="lastTd">코딩방 예약시 커피 무제한 무료 증정!!</td>
+		</tr>
+		</tbody>
+		
+	</table>
+	
+<style>
+	caption{
+		font-size:18pt;
+		color:red;
+		font-weight:bold;
+	}
+	#test02{
+		text-align:center;
+	}
+	#test02 thead{
+		background-color:red;
+		color:white;
+		font-weight:bold;
+	}
+	
+	#test02 tbody{
+		background-color:orange;
+	}
+	
+	#test02 tbody tr td input {
+		background-color:green;
+		color:white;
+	}
+	
+	#lastTd{
+		background-color:yellow;
+		font-weight:bold;
+		color:red;
+	}
+</style>
+	
+	
+	
+</body>
+</html>
