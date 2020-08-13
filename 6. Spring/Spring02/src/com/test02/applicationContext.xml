@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="김태현" class="com.test02.Address" >
+	<constructor-arg index="0" value="김태현"/>
+	<constructor-arg index="1" value="경기도 용인시 수지구 죽전동 현암로 63번길"/>
+	<constructor-arg index="2" value="01045181295"/>
+</bean>
+
+<bean id="육자영" class="com.test02.Address">
+	<constructor-arg index="0" value="육자영"/>
+	<constructor-arg index="1" value="수원"/>
+	<constructor-arg index="2" value="0101216"/>
+</bean>
+
+</beans>
