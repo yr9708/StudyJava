@@ -11,7 +11,7 @@
 * Spring03
 
   > 1. 객체를 만들때 특정 메소드를 이용하여 만들 수 있다. (싱클톤)
-  > 2. <constructor-arg>, <property> 사용하여 객체 만들어보자
+  > 2. < constructor-arg >, < property > 사용하여 객체 만들어보자
   > 3. c:emp-ref , p:emp-ref 란?
   > 4. lazy-init
 
