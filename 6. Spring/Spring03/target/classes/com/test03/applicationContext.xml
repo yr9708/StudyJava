@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="kim" class="com.test03.Engineer" >
+	<constructor-arg index="0" value="김태현"/>
+	<constructor-arg index="1" value="10000000"/>
+	<property name="dept" value="Engineer"></property>
+</bean>
+
+
+
+
+<bean id="wook" class="com.test03.Developer">
+	<constructor-arg index="0" value="육자영"/>
+	<constructor-arg index="1" value="20000000"/>
+	<property name="dept" value="Developer"></property>
+</bean>
+
+</beans>

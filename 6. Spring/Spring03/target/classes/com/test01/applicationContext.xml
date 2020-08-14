@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="singleton" class="com.test01.AbstractTest" factory-method="getInstance"></bean>
+	<!-- 
+		객체 만들때 특정 메소드를 이용해서 만들 수 있다.
+		싱글톤으로 관리된다.
+ 	-->
+</beans>

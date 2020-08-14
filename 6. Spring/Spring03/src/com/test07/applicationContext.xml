@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="samsong" class="com.test07.Samsong" lazy-init="true"/>
+<!-- 
+	lazy-init="true" 해당 bean이 호출 될때까지 생성되지 않는다.
+	호출 되면 그때 생성 할 것이다.
+	
+	main 메서드에서 호출하지 않아도 lazy-init이 없으면 객체는 생성이 된다.
+ -->
+<bean id="igtv" class="com.test07.IgTV"/>
+</beans>
