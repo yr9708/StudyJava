@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<context:component-scan base-package="com.test01.anno"></context:component-scan>
+<!-- 
+	base-package : 해당 패키지 밑에 있는 모든 것들을 확인하겠다. 
+	그 폴더 밑에 component 라는 어노테이션이 있으면 bean으로 만들어 주겠다.
+	
+	spring container 에 class와 똑같은이름으로(앞자만 소문자) 객체가 만들어진것
+	
+-->
+</beans>
