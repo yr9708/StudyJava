@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>Spring07_HelloMVC</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- TODO : 02. listener -->
+  <!-- 어떤 xml을 찾아서 호출해줘야하는지(실행시켜줄건지) 판단하는 역할 -->
+  <listener>
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>/WEB-INF/applicationContext.xml</param-value> 
+  </context-param>
+  
+  <!-- 
+  	contextConfigLocation 이라는 파라미터를 쓰면 contextLoader가 load할 수 있는 설정파일을 여러개 쓸 수 있다.
+  	만약 <context-param>을 사용하지 않으면 default로 /WEB-INF/applicationContext.xml (Srping 설정파일)을 쓰게 된다.
+   -->
+  
+  <!-- TODO : 03. DispatcherServlet (hello-servlet) -->
+  <servlet>
+  	<servlet-name>hello</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  
+  <!-- /*.do 아님!!! -->
+  <servlet-mapping>
+  	<servlet-name>hello</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+</web-app>
