@@ -51,3 +51,7 @@
 * SpringMVC_Review
 
   > 혼자 복습한 프로젝트로 model에서 addAttribute할때 list로 보내어 jsp에서 확인해보았다.
+
+* SpringMVC03
+
+  > DB(oracle)와 Spring을 연결하여 CRUD 해보자
