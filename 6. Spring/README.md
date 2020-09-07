@@ -52,6 +52,16 @@
 
   > 혼자 복습한 프로젝트로 model에서 addAttribute할때 list로 보내어 jsp에서 확인해보았다.
 
-* SpringMVC03
+* SpringMVC03, SpringMVC03_2
 
   > DB(oracle)와 Spring을 연결하여 CRUD 해보자
+  >
+  > redirect사용해보자
+
+* Spring06_TestAop01_Test
+
+  > img와 같이 출력되게 만들어보자
+
+* SpringMVC03_Filter
+
+  > Filter를 사용하여 콘솔에 정보를 찍어보자
