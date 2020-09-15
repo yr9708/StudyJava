@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- multipart 객체를 controller에 전달하는 역할
+	
+		
+	 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="100000000"></property> <!-- 최대 업로드 가능한 바이트 크기 -->
+		<property name="defaultEncoding" value="UTF-8"></property> <!-- 요청을 파싱할때 인코딩 할것 지정, 지정안하면 ISO-8859 사용 -->
+	</bean>
+</beans>
