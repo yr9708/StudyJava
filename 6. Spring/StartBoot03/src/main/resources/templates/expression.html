@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>expression</h1>
+	<p th:text="|Hello, ${name}!|">Hello, $name</p>
+	<p th:text="${dto.subject}">dto.subject</p>
+	<div th:object="${dto}"> <!-- 이렇게 써주면 dto를 div안에서만 써줄 수 있다. -->
+		<p th:text="*{subject}">subject</p> <!-- 가져와서 쓸때는 앞에 * 잊지말기 -->
+	</div>
+	
+	<table border="1">
+		<tr>
+			<th>SUBJECT</th>
+			<th>SEQ</th>
+		</tr>
+		<tr th:each="dto:${list}"> <!-- list를 돌리고 dto 이름으로 쓸거야,-->
+			<td th:text="*{dto.subject}">list.dto.subject</td>
+			<td th:text="*{dto.seq}">list.dto.seq</td>
+		</tr>
+	</table>
+	
+	<table border="1">
+		<tr>
+			<th>SUBJECT</th>
+		</tr>
+		<tr th:each="dto:${list}">
+			<td th:object="${dto}">
+				<span th:text="*{subject}">subject</span>:
+				<span th:text="*{seq}">seq</span>
+			</td>
+		</tr>
+	</table>
+	
+	<table border="1">
+		<tr th:if="${iflist} ne null"> <!-- 조건이 true 일때 -->
+			<td>iflist가 null이 아닙니다.</td>
+		</tr>
+		<tr th:unless="${iflist} ne null"> <!-- 조건이 false일때 -->
+			<td>iflist가 null 입니다.</td>
+		</tr>
+	</table>
+	
+<div th:each="num:${#numbers.sequence(1, 3)}">
+      <th:block th:switch="${num}">
+         <p th:case="1" th:text="|this is ${num}|"></p>
+         <p th:case="2" th:text="|second ${num]|"></p>
+         <p th:case="3" th:text="|this is ${num}|"></p>
+      </th:block>
+   </div>
+	
+	
+	<a th:href="@{index.html}">index</a>
+	<a th:href="@{util}">util</a>
+</body>
+</html>

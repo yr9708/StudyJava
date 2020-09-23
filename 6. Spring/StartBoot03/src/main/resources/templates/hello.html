@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <!-- xml의 namespace 정해주기, thymeleaf의 template으로 이용할거야-->
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+	boot가 template 파일에 있는 것을 읽어서 화면으로 구성해줌 
+	static은 정적(css,javacript같은), template는 동적(서버에서 주는 데이터에 따라서 정보가 바뀜, 동적처리가 가능하니까 jsp를 사용할 필요가 없음)
+-->
+</body>
+	<h1 th:text="${name}">Hello, name!</h1> <!-- 디자인 하는 사람과 협업할때 보기좋게 어떤 자리인 것을 표시해주고, 개발자는 데이터를 바로 h1 태그에 넣어 줄 수 있다. -->
+	<a href="/">index</a><br>
+	<a href="util">Utility</a><br>
+	
+</html>

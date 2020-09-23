@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>JpaList</h1>
+<div>
+	<table border="1">
+		<colgroup>
+			<col width="50"/>
+			<col width="100"/>
+			<col width="300"/>
+			<col width="100"/>
+		</colgroup>
+		<tr>
+			<th>no.</th>
+			<th>작성자</th>
+			<th>제목</th>
+			<th>작성일</th>
+		</tr>
+		<tr th:if="${list.size() == 0}">
+			<td colspan="4" align="center">작성된 글이 없습니다.</td>
+		</tr>
+		<tr th:unless="${list.size() == 0}" th:each="dto:${list}">
+			<td th:text="${dto.myno}">myno</td>
+			<td th:text="${dto.myname}">myname</td>
+			<td><a th:href="|@{/member/detail}?myno=${dto.myno}|" th:text="${dto.mytitle}">mytitle</a></td>
+			<td th:text="${dto.mydate}">mydate</td>
+		</tr>
+		<tr>
+			<td colspan="4" align="right">
+				<input type="button" th:value="글작성" onclick="location.href='insertform'"/>
+			</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>
