@@ -11,23 +11,6 @@ public class Solution36 {
 	}
     public static int[] solution(int n, int m) {
         int[] answer = new int[2];
-//        int cnt2 = 0;
-//        int cnt3 = 0;
-       
-//        
-//        while(true) {
-//        	if(n%2==0 && m%2==0) {
-//        		n = n/2;
-//        		m = m/2;
-//        		cnt2++;
-//        	}else if(n%3==0 && m%3==0) {
-//        		n = n/3;
-//        		m = m/3;
-//        		cnt3++;
-//        	}else {
-//        		break;
-//        	}
-//        }
         
         if(n==0 || m==0) {
         	answer[0]=1;
@@ -62,9 +45,7 @@ public class Solution36 {
         answer[1] = result * n * m;
         
         System.out.println(Arrays.toString(answer));
-        
-//        answer[0]= (int)(Math.pow(2, cnt2) * Math.pow(3, cnt3));
-//        answer[1] =(int)(Math.pow(2, cnt2) * Math.pow(3, cnt3) * n * m);
+	    
         return answer;
     }
 }
